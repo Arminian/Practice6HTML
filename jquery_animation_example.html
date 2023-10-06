@@ -1,22 +1,20 @@
-    <!DOCTYPE html>  
-    <html>  
-    <head>  
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  
-    <script>   
-    $(document).ready(function(){  
-        $("button").click(function(){  
-            $("div").animate({  
-                left: '250px',  
-                opacity: '0.5',  
-                height: '150px',  
-                width: '150px'  
-            });  
-        });  
-    });  
-    </script>   
-    </head>  
-    <body>  
-    <button>Start Animation</button>  
-    <div style="background:#125f21;height:100px;width:100px;position:absolute;"></div>  
-    </body>  
-    </html>  
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("p").click(function(){
+    $(this).hide();
+  });
+});
+</script>
+</head>
+<body>
+
+<p>If you click on me, I will disappear.</p>
+<p>Click me away!</p>
+<p>Click me too!</p>
+
+</body>
+</html>
