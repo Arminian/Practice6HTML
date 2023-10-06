@@ -26,6 +26,27 @@
         }
         window.onload = init;
     </script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  
+    <script>   
+    $(document).ready(function(){  
+        $("button").click(function(){  
+            $("div").animate({  
+                left: '250px',  
+                opacity: '0.5',  
+                height: '150px',  
+                width: '150px'  
+            });  
+        });  
+    });  
+    </script>
+    <script>
+        $(document).ready(function(){
+            $("p.event").click(function(){
+                $(this).hide();
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -328,7 +349,12 @@
              <img id = "myImage" src = "arrow.jpeg" />
              <p>Click button below to move the image to right</p>
              <input type = "button" value = "Click Me" onclick = "moveRight();" />
-        </form>   
+        </form>
+        
+        <button> Start Animation </button>  
+        <div style="background:#125f21;height:100px;width:100px;position:absolute;"></div>  
+
+        <p class="event"> Click to dissapear </p>
     </div>
 </body>
 </html>
