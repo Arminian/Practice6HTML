@@ -1,0 +1,415 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>What is Sass</title>
+    <meta name="description" content="Simple transition project">
+    <meta name="author" content="Nikita">
+  
+    <meta name="keywords" content="HTML, CSS">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script type = "text/javascript">
+        var imgObj = null;
+        
+        function init() {
+           imgObj = document.getElementById('myImage');
+           imgObj.style.position= 'relative'; 
+           imgObj.style.left = '0px'; 
+        }
+        function moveRight() {
+           imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+        }
+        window.onload = init;
+    </script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  
+    <script>
+        $(document).ready(function(){
+            $("#btt1").click(function(){
+                $("#div1").fadeOut();
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            $("#btt2").click(function(){
+            $("#div2").fadeIn("slow");
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function(){
+            $("#btt3").click(function(){
+            $("#hiding").hide();
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function(){  
+        $("#btt4").click(function(){  
+            $("#animation").animate({  
+                left: '250px',  
+                opacity: '0.5',  
+                height: '150px',  
+                width: '150px'  
+            });  
+        });  
+    });  
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            $("#flip").click(function(){
+                $("#panel").slideDown("slow");
+            });
+        });
+    </script>
+
+    <style> 
+        #panel, #flip {
+        padding: 5px;
+        text-align: center;
+        background-color: #e5eecc;
+        border: solid 1px #c3c3c3;
+        }
+        
+        #panel {
+        padding: 50px;
+        display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p class="intro">
+            Disclaimer: this is TSI University task for HTML, CSS and SASS workshop, 
+            not for publishing anywhere on the media. Please include this disclaimer
+        </p>
+        <h1 class="title">
+            What is Sass? Your guide to this top CSS preprocessor
+        </h1>
+        <p class="nTextItalic">
+            By Tammy Coron January 10, 2020
+        </p>
+        <h1 class="entry">
+            Discover what Sass is, and learn how to start using it.
+        </h1>
+        <p class="citation">
+            What is Sass? That's the question we here to answer. If you're new to web design, 
+            you've probably heard the term floating around, but you might not be quite up to 
+            speed with exactly what Sass is, what is does, and whether or not you should be 
+            using it. In short, Sass is a CSS preprocessor, which adds special features such 
+            as variables, nested rules and mixins (sometimes referred to as syntactic sugar) 
+            into regular CSS. The aim is to make the coding process simpler and more efficient.
+            Let's explore in more detail. 
+        </p>
+        <p class="citation">
+            Article source: https://www.creativebloq.com/web-design/what-is-sass-111517618
+        </p>
+        <h2 class="topic">
+            What is a CSS preprocessor?
+        </h2>
+        <p class="nText">
+            A CSS preprocessor is a scripting language that extends CSS by allowing developers 
+            to write code in one language and then compile it into CSS. Sass is perhaps the most 
+            popular preprocessor around right now, but other well-known examples include Less 
+            and Stylus.
+        </p>
+        <p class="nText">
+            Before we go any further, a quick public service announcement is in order: most web 
+            designers would say that if you're new to CSS, you're better off avoiding Sass 
+            (or any preprocessors, extensions or frameworks) while you're still learning. While 
+            it's true they offer many advantages in speed and efficiency, it's important that 
+            you really get to grips with the basics of CSS. Make sure you learn the core 
+            concepts before you start exploring shortcuts and confusing things.
+        </p>
+        <h2 class="topic">
+            What is Sass?
+        </h2>
+        <p class="nTextBold">
+                Sass is arguably the most useful of all CSS extensions
+        </p>
+        <p class="nText">
+            Sass (which stands for 'Syntactically awesome style sheets) is an extension of CSS 
+            that enables you to use things like variables, nested rules, inline imports and more.
+            It also helps to keep things organised and allows you to create style sheets faster.
+        </p>
+        <p class="nText">
+            Sass is compatible with all versions of CSS. The only requirement for using it 
+            is that you must have Ruby installed. Users are also asked to follow the Sass 
+            Community Guidelines.
+            How to use Sass
+        </p>
+        <p class="nText">
+            In the following section, we'll outline some basic tips for using Sass, using 
+            examples from the official Sass website. Take a look at the Sass Documentation 
+            for additional references and examples. 
+        </p>
+        <h2 class="topic">
+            Syntax
+        </h2>
+        <p class="nTextBold">
+            Sass includes two syntax options:
+        </p>
+        <p class="nText">
+            <li>
+                SCSS (Sassy CSS): Uses the .scss file extension and is fully compliant 
+                with CSS syntax
+            </li>
+            <li>
+                Indented (simply called 'Sass'): Uses .sass file extension and indentation 
+                rather than brackets; it is not fully compliant with CSS syntax, but it's 
+                quicker to write
+            </li>
+        </p>
+        <p class="nTextItalic">
+            Note that files can be converted from one syntax to the other using the 
+            sass-convert command.
+        </p>
+        <h2 class="topic">
+            Variables
+        </h2>
+        <p class="nText">
+            Just like other programming languages, Sass allows the use of variables that can 
+            store information you can use throughout your style sheet. For example, you can 
+            store a colour value in a variable at the top of the file, and then use this 
+            variable when setting the colour of your elements. This enables you to quickly 
+            change your colours without having to modify each line separately.
+        </p>
+        <p class="nText">
+            <b>
+                For example:
+            </b>
+        </p>
+        <p class="code">
+            $font-stack:    Helvetica, sans-serif;
+            $primary-color: #333;
+    
+            body {
+            font: 100% $font-stack;
+            color: $primary-color;
+            }
+    
+            The following CSS will be produced:
+    
+            body {
+            font: 100% Helvetica, sans-serif;
+            color: #333;
+            }
+        </p>
+        <h2 class="topic">
+            Nesting
+        </h2>
+        <p class="nText">
+            Nesting is a double-edged sword. While it provides an excellent method for reducing 
+            the amount of code you need to write, it can also lead to over-qualified CSS if not 
+            executed carefully. The idea is to nest your CSS selectors in such a way as to 
+            mimic your HTML hierarchy.
+        </p>
+        <p class="nText">
+            The following shows a basic navigation style that uses nesting:
+        </p>
+        <p class="code">
+            nav {
+                ul {
+                  margin: 0;
+                  padding: 0;
+                  list-style: none;
+                }
+              
+                li { display: inline-block; }
+              
+                a {
+                  display: block;
+                  padding: 6px 12px;
+                  text-decoration: none;
+                }
+              }
+        </p>
+        <p>
+            <b>
+                The CSS output is as follows:
+            </b>
+        </p>
+        <p class="code">
+            nav ul {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+              }
+              
+              nav li {
+                display: inline-block;
+              }
+              
+              nav a {
+                display: block;
+                padding: 6px 12px;
+                text-decoration: none;
+              }          
+        </p>
+        <h2 class="topic">
+            Partials
+        </h2>
+        <p class="nText">
+            Partials are smaller Sass files that can be imported (see next section) into other 
+            Sass files. Think of partials as code snippets. With these code snippets, your CSS 
+            can now be modular and easier to maintain. A partial is designated as such by 
+            naming it with a leading underscore: _partial.scss. Import
+        </p>
+        <p class="nText">
+            Used with Partials (see previous section), the @import directive allows you to 
+            import your partial files into the current file, to build one single CSS file. 
+            Be mindful of how many imports you're using as an HTTP request will be 
+            generated for each one.
+        </p>
+        <p class="code">
+            // _reset.scss
+    
+            html,
+            body,
+            ul,
+            ol {
+            margin: 0;
+            padding: 0;
+            }
+    
+            // basefile.scss
+    
+            @import 'reset';
+    
+            body {
+            font: 100% Helvetica, sans-serif;
+            background-color: #efefef;
+            }
+    
+            And the corresponding CSS output:
+    
+            html, body, ul, ol {
+            margin: 0;
+            padding: 0;
+            }
+    
+            body {
+            font: 100% Helvetica, sans-serif;
+            background-color: #efefef;
+            }
+        </p>
+        <p class="nText">
+            <i>
+                Note: When importing partials, you don't need to include the file extension or 
+                the underscore.
+            </i>
+        </p>
+        <h2 class="topic">
+            Mixins
+        </h2>
+        <p class="nTextBold">
+            One of the advantages of using preprocessors is their ability to take complex, 
+            long-winded code and simplify it. This is where mixins come in handy!
+        </p>
+        <p class="nText">
+            For example, if you need to include the vendor prefixes, you can use a mixin 
+            instead. Take a look at this example for border-radius:
+        </p>
+        <p class="code">
+            @mixin border-radius($radius) {
+                -webkit-border-radius: $radius;
+                   -moz-border-radius: $radius;
+                    -ms-border-radius: $radius;
+                        border-radius: $radius;
+              }
+              
+              .box { @include border-radius(10px); }          
+        </p>
+        <p class="nText">
+            Notice the @mixin directive at the top. It has been given the name border-radius 
+            and uses the variable $radius as its parameter. This variable is used to set the 
+            radius value for each element. 
+        </p>
+        <p class="nText">
+            Later, the @include directive is called, along with the mixin name (border-radius) 
+            and a parameter (10px). Thus .box { @include border-radius(10px); }.
+        </p>
+        <p class="nTextBold">
+            The following CSS is produced:
+        </p>
+        <p class="code">
+            .box {
+                -webkit-border-radius: 10px;
+                -moz-border-radius: 10px;
+                -ms-border-radius: 10px;
+                border-radius: 10px;
+              }          
+        </p>
+        <h2 class="topic">
+            Extend/Inheritance
+        </h2>
+        <p class="nText">
+            The @extend directive has been called one of Sass' most powerful features. 
+            After seeing it in action, it's clear why.
+        </p>
+        <p class="nText">
+            The idea is that with this directive you won't have to include multiple class 
+            names on your HTML elements and can keep your code DRY (don't repeat yourself). 
+            Your selectors can inherit the styles of other selectors, and then be easily 
+            extended when required. Now that's powerful. Operators        
+        </p>
+        <p class="nText">
+            Having the ability to perform calculations in your CSS allows you to do more, 
+            like convert pixel values into percentages. You'll have access to standard maths 
+            functions like addition, subtraction, multiplication and division. Of course, these 
+            functions can be combined to create complex calculations.
+        </p>
+        <p class="nText">
+            In addition, Sass includes a few built-in functions to help manipulate numbers. 
+            Functions like percentage(), floor() and round() to name a few.
+        </p>
+        <h2 class="topic">
+            Tammy Coron
+        </h2>
+        <p class="nTextBold">
+            Tammy is an independent creative professional and the host of Roundabout: 
+            Creative Chaos. She’s also the owner of Just Write Code, an independent production 
+            company located in West Tennessee. For more information about Tammy, visit her 
+            website by clicking the icons above. 
+        </p>
+        
+        <form>
+             <img id = "myImage" src = "arrow.jpeg" />
+             <p>Click button below to move the image to right</p>
+             <input type = "button" value = "Click Me" onclick = "moveRight();" />
+        </form>
+
+        <!-- 3 effects -->
+        <hr>
+        <button id="btt1">Click to fade out box</button><br><br>
+        <div id="div1" style="width:80px;height:80px;background-color:red;"></div><br>
+
+        <hr>
+        <button id="btt2">Click to fade in box</button><br><br>
+        <div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div><br>
+
+        <hr>
+        <div id="flip">Click to slide down box</div>
+        <div id="panel">Hello there, general Kenobi</div>
+
+        <!-- event -->
+        <hr>
+        <p id="hiding">Sample paragraph to hide</p>
+        <button id="btt3">Click here to hide</button>
+
+        <!-- animation -->
+        <hr>
+        <button id="btt4">Start Animation</button>  
+        <div id="animation" style="width:80px;height:80px;background-color:yellow;"></div>  
+    </div>
+</body>
+</html>
