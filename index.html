@@ -65,22 +65,22 @@
 
     <script>
         $(document).ready(function(){
-            $("#flip").click(function(){
-                $("#panel").slideDown("slow");
+            $("#slider").click(function(){
+                $("#wall").slideDown("slow");
             });
         });
     </script>
 
     <style> 
-        #panel, #flip {
-        padding: 5px;
+        #wall, #slider {
+        padding: 10px;
         text-align: center;
-        background-color: #e5eecc;
-        border: solid 1px #c3c3c3;
+        background-color: lightblue;
+        border: solid 2px darkslategray;
         }
         
-        #panel {
-        padding: 50px;
+        #wall {
+        padding: 70px;
         display: none;
         }
     </style>
@@ -398,8 +398,8 @@
         <div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div><br>
 
         <hr>
-        <div id="flip">Click to slide down box</div>
-        <div id="panel">Hello there, general Kenobi</div>
+        <div id="slider">Click to slide down box</div>
+        <div id="wall">Hello there, general Kenobi</div>
 
         <!-- event -->
         <hr>
